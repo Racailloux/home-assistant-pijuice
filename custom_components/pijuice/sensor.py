@@ -55,11 +55,11 @@ SENSOR_IO_CURRENT = "io_current"
 SENSOR_LIST = {
     # [name, device class, state class, unit, icon, index, size]
     SENSOR_BATTERY_STATUS:
-        ['Battery status',        '',                       '',                      '',                      "mdi:flash",       0x40, 1],
+        ['Battery status',        '',                       '',                      None,                    "mdi:flash",       0x40, 1],
     SENSOR_POWER_STATUS:
-        ['Power input status',    '',                       '',                      '',                      "mdi:power-plug",  0x40, 1],
+        ['Power input status',    '',                       '',                      None,                    "mdi:power-plug",  0x40, 1],
     SENSOR_POWER_IO_STATUS:
-        ['Power input IO status', '',                       '',                      '',                      "mdi:power-plug",  0x40, 1],
+        ['Power input IO status', '',                       '',                      None,                    "mdi:power-plug",  0x40, 1],
     SENSOR_CHARGE:
         ['Charge',                DEVICE_CLASS_BATTERY,     STATE_CLASS_MEASUREMENT, PERCENTAGE,              "mdi:battery",     0x41, 1],
     SENSOR_TEMP:
