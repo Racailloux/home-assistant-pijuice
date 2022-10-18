@@ -1,6 +1,5 @@
 {
   "name": "PiJuice UPS Hat",
   "render_readme": true,
-  "domains": "sensor",
   "country": ["EN", "FR"]
 }
