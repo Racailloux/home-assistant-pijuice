@@ -215,8 +215,8 @@ class PiJuiceSensor(SensorEntity):
         i2c_bus = int(self._config.get(CONF_I2C_BUS))
         
         try:
-            bus = SMBus(i2c_bus)
-            data = bus.read_i2c_block_data(i2c_address, self._index, self._size)
+            with SMBus(i2c_bus) as bus:
+                data = bus.read_i2c_block_data(i2c_address, self._index, self._size)
             
             # Scale red values
             if self._sensor == SENSOR_BATTERY_STATUS:
