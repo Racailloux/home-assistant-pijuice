@@ -6,6 +6,7 @@
 Here is an integration to retrieve [PiJuice](https://github.com/PiSupply/PiJuice) values in [Home Assistant](https://home-assistant.io) sensors.
 
 ## Sensors supported
+Here is the list of sensors available to be added from this integration. For more details, please refers to the [DOCUMENTATION](https://github.com/Racailloux/home-assistant-pijuice/blob/main/DOCUMENTATION.md)
 * Battery status
 * Power input status
 * Power input I/O status
