@@ -5,6 +5,7 @@ import voluptuous as vol
 from datetime import timedelta
 
 from homeassistant.components.sensor import SensorEntity
+from homeassistant.components.sensor import SensorDeviceClass
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 import homeassistant.helpers.config_validation as cv
 from homeassistant.util import Throttle
@@ -16,11 +17,7 @@ from homeassistant.const import (
     TEMP_FAHRENHEIT,
     PERCENTAGE,
     ELECTRIC_POTENTIAL_VOLT,
-    ELECTRIC_CURRENT_AMPERE,
-    DEVICE_CLASS_BATTERY,
-    DEVICE_CLASS_TEMPERATURE,
-    DEVICE_CLASS_VOLTAGE,
-    DEVICE_CLASS_CURRENT
+    ELECTRIC_CURRENT_AMPERE
 )
 from homeassistant.components.sensor import (
     STATE_CLASS_MEASUREMENT,
@@ -55,23 +52,23 @@ SENSOR_IO_CURRENT = "io_current"
 SENSOR_LIST = {
     # [name, device class, state class, unit, icon, index, size]
     SENSOR_BATTERY_STATUS:
-        ['Battery status',        '',                       '',                      None,                    "mdi:flash",       0x40, 1],
+        ['Battery status',        SensorDeviceClass.ENUM,   "",                      None,                    "mdi:flash",       0x40, 1],
     SENSOR_POWER_STATUS:
-        ['Power input status',    '',                       '',                      None,                    "mdi:power-plug",  0x40, 1],
+        ['Power input status',    SensorDeviceClass.ENUM,   "",                      None,                    "mdi:power-plug",  0x40, 1],
     SENSOR_POWER_IO_STATUS:
-        ['Power input IO status', '',                       '',                      None,                    "mdi:power-plug",  0x40, 1],
+        ['Power input IO status', SensorDeviceClass.ENUM,   "",                      None,                    "mdi:power-plug",  0x40, 1],
     SENSOR_CHARGE:
-        ['Charge',                DEVICE_CLASS_BATTERY,     STATE_CLASS_MEASUREMENT, PERCENTAGE,              "mdi:battery",     0x41, 1],
+        ['Charge',                SensorDeviceClass.BATTERY,     STATE_CLASS_MEASUREMENT, PERCENTAGE,              "mdi:battery",     0x41, 1],
     SENSOR_TEMP:
-        ['Temperature',           DEVICE_CLASS_TEMPERATURE, STATE_CLASS_MEASUREMENT, TEMP_CELSIUS,            "mdi:thermometer", 0x47, 2],
+        ['Temperature',           SensorDeviceClass.TEMPERATURE, STATE_CLASS_MEASUREMENT, TEMP_CELSIUS,            "mdi:thermometer", 0x47, 2],
     SENSOR_BATTERY_VOLTAGE:
-        ['Battery voltage',       DEVICE_CLASS_VOLTAGE,     STATE_CLASS_MEASUREMENT, ELECTRIC_POTENTIAL_VOLT, "mdi:flash",       0x49, 2],
+        ['Battery voltage',       SensorDeviceClass.VOLTAGE,     STATE_CLASS_MEASUREMENT, ELECTRIC_POTENTIAL_VOLT, "mdi:flash",       0x49, 2],
     SENSOR_BATTERY_CURRENT:
-        ['Battery current',       DEVICE_CLASS_CURRENT,     STATE_CLASS_MEASUREMENT, ELECTRIC_CURRENT_AMPERE, "mdi:current-dc",  0x4b, 2],
+        ['Battery current',       SensorDeviceClass.CURRENT,     STATE_CLASS_MEASUREMENT, ELECTRIC_CURRENT_AMPERE, "mdi:current-dc",  0x4b, 2],
     SENSOR_IO_VOLTAGE:
-        ['IO voltage',            DEVICE_CLASS_VOLTAGE,     STATE_CLASS_MEASUREMENT, ELECTRIC_POTENTIAL_VOLT, "mdi:flash",       0x4d, 2],
+        ['IO voltage',            SensorDeviceClass.VOLTAGE,     STATE_CLASS_MEASUREMENT, ELECTRIC_POTENTIAL_VOLT, "mdi:flash",       0x4d, 2],
     SENSOR_IO_CURRENT:
-        ['IO current',            DEVICE_CLASS_CURRENT,     STATE_CLASS_MEASUREMENT, ELECTRIC_CURRENT_AMPERE, "mdi:current-dc",  0x4f, 2],
+        ['IO current',            SensorDeviceClass.CURRENT,     STATE_CLASS_MEASUREMENT, ELECTRIC_CURRENT_AMPERE, "mdi:current-dc",  0x4f, 2],
 }
 
 BAT_STATUS_NORMAL = 'normal'
