@@ -9,7 +9,6 @@ from homeassistant.components.sensor import SensorDeviceClass
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 import homeassistant.helpers.config_validation as cv
 from homeassistant.util import Throttle
-from homeassistant.util.temperature import celsius_to_fahrenheit
 from homeassistant.const import (
     CONF_NAME,
     CONF_MONITORED_CONDITIONS,
